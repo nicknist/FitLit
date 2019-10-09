@@ -1,5 +1,6 @@
 html {
   margin: 0;
+  font-family: 'Fugaz One', curisve;
 }
 
 body {
@@ -10,6 +11,16 @@ body {
   position: relative;
 }
 
+#front-page-header {
+  margin: 2px;
+  padding-left: 15px;
+}
+
+h1 {
+  font-size: 6.5em;
+  margin: 0px;
+}
+
 #front-page-form {
   margin: auto;
   text-align: center;
@@ -17,15 +28,16 @@ body {
   flex-direction: column;
   width: 45%;
   justify-content: center;
-  height: 60vh;
+  height: 50vh;
 }
 
 #front-page-name {
   height: 50px;
   border-radius: 5px;
   border: none;
-  padding: 5px;
-  font-size: 1.5em;  
+  padding: 10px;
+  font-size: 2em;  
+  font-family: 'Fugaz One', curisve;
 }
 
 ::placeholder {
@@ -33,18 +45,23 @@ body {
 }
 
 #front-page-btn {
-  height: 60px;
+  height: 70px;
   border-radius: 5px;
   border: none;
   background: linear-gradient(rgb(1, 115, 143), rgba(150, 234, 255, 1));
-  font-size: 2em;
+  font-size: 3.5em;
   cursor: pointer;
+  font-family: 'Fugaz One', curisve;
 }
-
-
 
 #front-page-footer {
   position: absolute;
-  bottom: 5px;
+  bottom: 0;
   right: 5px;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 0;
+  margin-bottom: -10px;
 }
