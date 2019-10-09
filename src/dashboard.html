@@ -8,19 +8,20 @@
   <body>
     <header>
       <p>Put a nav button or User ID thing here?</p>
-      <h1>HELLO USER!</h1>
+      <h1>HELLO <span id="welcome-message">USER</span>!</h1>
       <h2>FitLit - Icon(Fire?)</h2>
     </header>
     <main>
       <nav>
         <ul>
-          <li>UserID: ?</li>
-          <li>Name: ?</li>
-          <li>Address: ?</li>
-          <li>Email: ?</li>
-          <li>Stride Length: ?</li>
-          <li>Daily Step Goal: ?</li>
-          <li>Friends: Form goes below this li</li>
+          <li id="user-id">UserID: ?</li>
+          <li id="user-name">Name: ?</li>
+          <li id="user-address">Address: ?</li>
+          <li id="user-email">Email: ?</li>
+          <li id="user-stride">Stride Length: ?</li>
+          <li id="user-step-goal">Daily Step Goal: ?</li>
+          <li id="user-friends">Friends: Form goes below this li</li>
+          <li id="user-compare-goal">STEP GOAL COMPARISON</li>
         </ul>
       </nav>
       <section class="main-dashboard">
@@ -57,6 +58,9 @@
       </section>
     </main>
   </body>
+  <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="User.js"></script>
+  <script type="text/javascript" src="UserRepository.js"></script>
   <script type="text/javascript" src="../data/users.js"></script>
   <script type="text/javascript" src="../data/hydration.js"></script>
   <script type="text/javascript" src="../data/sleep.js"></script>
