@@ -1,6 +1,5 @@
 class UserRepository {
   constructor(data) {
-    //instantiate is all here? 
     this.data = data;
   }
 
