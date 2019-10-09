@@ -1,0 +1,68 @@
+html {
+  margin: 0;
+  font-family: 'Fugaz One', curisve;
+}
+
+body {
+  background: linear-gradient(45deg,rgba(132, 204, 235, 0.454), rgba(136, 179, 189, 0.6)), url("../images/intro.jpg");
+  background-repeat: no-repeat;
+  background-size: 200vh;
+  height: 98vh;
+  position: relative;
+}
+
+#front-page-header {
+  margin: 2px;
+  padding-left: 15px;
+}
+
+h1 {
+  font-size: 6.5em;
+  margin: 0px;
+  
+}
+
+#front-page-form {
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  justify-content: center;
+  height: 50vh;
+}
+
+#front-page-name {
+  height: 50px;
+  border-radius: 20px;
+  border: none;
+  padding: 20px;
+  font-size: 2.3em;  
+  font-family: 'Fugaz One', curisve;
+}
+
+::placeholder {
+  opacity: .3;
+}
+
+#front-page-btn {
+  height: 85px;
+  border-radius: 20px;
+  border: 2.5px solid white;
+  background:rgba(145, 232, 233, 0.673);
+  font-size: 3.5em;
+  cursor: pointer;
+  font-family: 'Fugaz One', curisve;
+}
+
+#front-page-footer {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 0;
+  margin-bottom: -10px;
+}
