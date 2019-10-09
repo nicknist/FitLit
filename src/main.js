@@ -3,7 +3,8 @@ window.addEventListener('load', loadDashBoard);
 function loadDashBoard() {
   let instantiatedUsers = userData.map((user) => new User(user));
   let userRepo = new UserRepository(instantiatedUsers);
-  updateUserInfo(userRepo.returnUserData(20), userRepo.calculateAvgStepGoal());
+  updateUserInfo(userRepo.returnUserData(38), userRepo.calculateAvgStepGoal());
+  updateHydrationInfo();
 }
 
 function updateUserInfo(userObj, avgStepGoal) {
@@ -16,4 +17,8 @@ function updateUserInfo(userObj, avgStepGoal) {
   $('#user-step-goal').text(userObj.dailyStepGoal);
   $('#user-friends').text(userObj.friends);
   $('#user-compare-goal').text(`Your step goal is ${userObj.dailyStepGoal} and the average is ${avgStepGoal}`)
+}
+
+function updateHydrationInfo() {
+  
 }
