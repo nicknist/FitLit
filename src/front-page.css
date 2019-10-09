@@ -1,0 +1,50 @@
+html {
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(rgba(150, 234, 255, 0.6), rgba(150, 234, 255, 0.6)), url("../images/intro.jpg");
+  background-repeat: no-repeat;
+  background-size: 200vh;
+  height: 100vh;
+  position: relative;
+}
+
+#front-page-form {
+  margin: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  justify-content: center;
+  height: 60vh;
+}
+
+#front-page-name {
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  font-size: 1.5em;  
+}
+
+::placeholder {
+  opacity: .3;
+}
+
+#front-page-btn {
+  height: 60px;
+  border-radius: 5px;
+  border: none;
+  background: linear-gradient(rgb(1, 115, 143), rgba(150, 234, 255, 1));
+  font-size: 2em;
+  cursor: pointer;
+}
+
+
+
+#front-page-footer {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
