@@ -55,6 +55,10 @@ h1 {
   font-family: 'Fugaz One', curisve;
 }
 
+#front-page-btn:focus {
+  outline: none;
+}
+
 #front-page-footer {
   position: absolute;
   bottom: 0;

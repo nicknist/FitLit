@@ -4,7 +4,7 @@ document.querySelector('#menu-btn').addEventListener('click', toggleNavMenu);
 function loadDashBoard() {
   let instantiatedUsers = userData.map((user) => new User(user));
   let userRepo = new UserRepository(instantiatedUsers);
-  updateUserInfo(userRepo.returnUserData(38), userRepo.calculateAvgStepGoal());
+  updateUserInfo(userRepo.returnUserData(36), userRepo.calculateAvgStepGoal());
   updateHydrationInfo();
 }
 

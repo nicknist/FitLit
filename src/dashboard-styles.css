@@ -87,7 +87,7 @@ nav {
 
 .hidden {
   position: absolute;
-  left: -475px;
+  left: -500px;
   transition: .5s;
 }
 
