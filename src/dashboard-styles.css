@@ -67,21 +67,41 @@ header {
 
 
 nav {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.3em;
   position: absolute;
   background: rgba(232, 232, 232);
-  color: rgb(0, 208, 255);
-  font-family: 'Fugaz One', curisve;
+  color: rgb(3, 90, 238);
   border-radius: 20px;
+  border: 2px solid black;
   padding: 20px;
-  visibility: hidden;
+  transition: .5s;
+  left: 0;
+  /* visibility: hidden; */
+}
+
+.hidden {
+  position: absolute;
+  left: -475px;
+  transition: .5s;
 }
 
 ul {
   list-style-type: none;
 }
 
+li {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  margin-top: 5px;
+}
+
+#user-compare-goal {
+  border: none;
+  margin-top: 15px;
+}
+
 body {
-  background: linear-gradient(45deg,rgba(132, 204, 235, 0.454), rgba(136, 179, 189, 0.6)), url("../images/intro.jpg");
+  background: linear-gradient(rgba(3, 90, 238, 0.7), rgba(136, 179, 189, 0.9));
   background-repeat: no-repeat;
   background-size: 200vh;
   background-attachment: fixed;
@@ -110,11 +130,12 @@ main {
 }
 
 .info-card {
-  border: 3px solid white;
+  cursor: pointer;
+  /* border: 3px solid white; */
   border-radius: 20px;
   box-shadow: 15px 18px 10px 5px black;
   margin: auto;
   margin-top: 65px;
-  background: rgba(145, 232, 233);
+  background: rgb(218, 226, 230);
   width: 400px; 
 }
