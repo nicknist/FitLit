@@ -3,13 +3,18 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="dashboard-styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Fugaz+One|Roboto+Condensed:300&display=swap" rel="stylesheet">
     <title>Activity Tracker</title>
   </head>
   <body>
     <header>
-      <p>Put a nav button or User ID thing here?</p>
-      <h1>HELLO <span id="welcome-message">USER</span>!</h1>
-      <h2>FitLit - Icon(Fire?)</h2>
+      <button id="menu-btn">
+          <div class="menu-div1"></div>
+          <div class="menu-div2"></div>
+          <div class="menu-div3"></div>
+      </button>
+      <h1>Hi, <span id="welcome-message">USER</span>!</h1>
+      <h2>FitLit</h2>
     </header>
     <main>
       <nav>
@@ -26,21 +31,21 @@
       </nav>
       <section class="main-dashboard">
         <article class="info-card">
-          <img class="dashboard-photo" src="images/cloud.jpg" alt="Teardrop to signify hydration information">
+          <img class="dashboard-photo" src="../images/water-droplet.png" alt="Teardrop to signify hydration information">
         </article>
         <article class="info-card">
-          <img class="dashboard-photo" src="images/link.png" alt="Clock to signify minutes active">
+          <img class="dashboard-photo" src="../images/timer.png" alt="Clock to signify minutes active">
         </article>
         <article class="info-card">
-          <img class="dashboard-photo" src="images/lucina.jpg" alt="Picture of Z's to signify sleep information">
+          <img class="dashboard-photo" src="../images/sleep.png" alt="Picture of Z's to signify sleep information">
         </article>
         <article class="info-card">
-          <img class="dashboard-photo" src="images/mario.jpg" alt="Stairs photo to signify flights of stairs climbed">
+          <img class="dashboard-photo" src="../images/stairs.png" alt="Stairs photo to signify flights of stairs climbed">
         </article>
         <article class="info-card">
-          <img class="dashboard-photo" src="images/cloud.jpg" alt="Foot picture to signify step goal information">
+          <img class="dashboard-photo" src="../images/shoe-icon.png" alt="Foot picture to signify step goal information">
         </article>
-        <article class="info-card">
+        <!-- <article class="info-card">
           <p class="user-info">USER HYDRATION INFO</p>
         </article>
         <article class="info-card">
@@ -54,7 +59,7 @@
         </article>
         <article class="info-card">
           <p class="user-info">USER STEP INFO</p>
-        </article>
+        </article> -->
       </section>
     </main>
   </body>

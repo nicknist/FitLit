@@ -3,23 +3,99 @@
   padding: 0px;
 }
 
+h1 {
+  font-size: 4.5em;
+  margin-top: 10px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+h2 {
+  font-size: 5em;
+  margin-right: 10px;
+  font-family: 'Fugaz One', cursive;
+}
+
 header {
-  background-color: #00bcd44d;
+  /* background-color: #00bcd44d; */
   display: flex;
   justify-content: space-between;
 }
 
+#menu-btn {
+  background: rgba(0, 0, 0, 0.01);
+  cursor: pointer;
+  height: 50px;
+  padding-top: 30px;
+  transition: .5s;
+  width: 120px;
+  border: none;
+}
+
+.menu-div1 {
+  background-color: white;
+  height: 5px;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-right: 0px;
+  transition: .5s;
+  width: 60%;
+  border-radius: 10px;
+}
+
+.menu-div2 {
+  background-color: white;
+  height: 5px;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  transition: .5s;
+  width: 60%;
+  border-radius: 10px;
+}
+
+.menu-div3 {
+  background-color: white;
+  height: 5px;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-right: 38px;
+  transition: .5s;
+  width: 60%;
+  border-radius: 10px;
+}
+
+
+
+nav {
+  position: absolute;
+  background: rgba(232, 232, 232);
+  color: rgb(0, 208, 255);
+  font-family: 'Fugaz One', curisve;
+  border-radius: 20px;
+  padding: 20px;
+  visibility: hidden;
+}
+
+ul {
+  list-style-type: none;
+}
+
 body {
-  background-color: lavenderblush;
+  background: linear-gradient(45deg,rgba(132, 204, 235, 0.454), rgba(136, 179, 189, 0.6)), url("../images/intro.jpg");
+  background-repeat: no-repeat;
+  background-size: 200vh;
+  background-attachment: fixed;
+  height: 150vh;
 }
 
 .dashboard-photo {
-  height: 200px;
-  width: 200px;
+  height: 45vh;
+  width: 100%;
 }
 
 main {
   display: flex;
+  position: relative;
 }
 
 .user-info {
@@ -34,8 +110,11 @@ main {
 }
 
 .info-card {
-  border: 1px solid black;
-  box-shadow: -4px -3px 20px 0px black;
+  border: 3px solid white;
+  border-radius: 20px;
+  box-shadow: 15px 18px 10px 5px black;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 65px;
+  background: rgba(145, 232, 233);
+  width: 400px; 
 }
