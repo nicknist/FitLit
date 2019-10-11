@@ -136,6 +136,10 @@ main {
   flex-flow: wrap;
 }
 
+input {
+  display: none;
+}
+
 .info-card {
   cursor: pointer;
   border-radius: 20px;
@@ -174,8 +178,9 @@ main {
 }
 
 .info-card-back {
-  height: 100%;
+  height: 45vh;
   width: 400px;
   background: red;
   transform: rotateY(180deg);
+  border-radius: 20px;
 }
