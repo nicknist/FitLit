@@ -6,12 +6,11 @@ class SleepQuality {
   calculateLifetimeAvgSleepQuality(userID) {
     let userInstances = this.data.filter(data => data.userID === userID);
     let totalUserSleepQuality = userInstances.reduce((acc, user) => acc += user.sleepQuality, 0);
-    return totalUserSleepQuality / userInstances.length; 
+    return Math.floor((totalUserSleepQuality / userInstances.length) * 10) / 10;
   }
 
   returnSleepQuality(userID, date) {
-    let userInstances = this.data.find(data => data.userID === userID && data.date === date);
-     return userInstances.sleepQuality;
+    return this.data.find(data => data.userID === userID && data.date === date).sleepQuality;
   }
 
   returnWeeklySleepQuality(userID, date) {
@@ -39,7 +38,7 @@ class SleepQuality {
     this.data.forEach((ele) => {
       if (!uniqueIDs.includes(ele.userID)) {
         uniqueIDs.push(ele.userID)
-      } 
+      }
     });
     uniqueIDs.forEach((user) => {
       if (this.calculateWeeklyAvg(user, date) >= 3) {
@@ -49,9 +48,13 @@ class SleepQuality {
      return greatSleepers;
   }
 
+  findGreatestNightOfSleep() {
+    let userSleep = this.data.sort((a, b) => b.sleepQuality - a.sleepQuality);
+    return `User${userSleep[0].userID} on ${userSleep[0].date}!`;
+  }
+
 }
 
 if (module !== undefined) {
   module.exports = SleepQuality;
 }
-

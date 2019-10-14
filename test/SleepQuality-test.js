@@ -190,10 +190,14 @@ describe('SleepQuality', () => {
 
   it('should average out the weekly sleep quality array', () => {
     expect(sleepQuality2.calculateWeeklyAvg(3, '2019/06/24')).to.equal(3.5)
-  })
+  });
 
   it('should return all users whose average sleep quality is greater than 3 for a given week', () => {
     expect(sleepQuality2.calculateGreatSleep('2019/06/24')).to.deep.equal([3])
+  });
+
+  it('should return the user with the highest sleep quality of sleep', () => {
+    expect(sleepQuality.findGreatestNightOfSleep()).to.equal("User3 on 2019/06/16!");
   })
 
-}) 
+})
