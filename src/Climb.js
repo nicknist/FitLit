@@ -14,6 +14,16 @@ class Climb {
     return Math.floor(userClimbs.reduce((acc, sum) => acc += sum.flightsOfStairs, 0) / userClimbs.length);
   }
 
+  returnWeeklyClimb(userID, date) {
+    let userInstances = this.data.filter(data => data.userID === userID);
+    let specificIndex = userInstances.findIndex(data => date === data.date);
+    let weeklyClimb = [];
+    for (let i = specificIndex; i > specificIndex - 7; i--) {
+      weeklyClimb.unshift(userInstances[i].flightsOfStairs);
+    }
+    return weeklyClimb;
+  }
+
   calculateLifeTimeClimbTotal(userID) {
     let userInstances = this.data.filter(data => data.userID === userID);
     let totalStairs = userInstances.reduce((acc, sum) => acc += sum.flightsOfStairs, 0);
