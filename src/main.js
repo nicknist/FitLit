@@ -9,6 +9,8 @@ function loadDashBoard() {
   updateSleepQualityInfo(20);
   updateSleepQuantityInfo(20);
   updateMinutesInfo(20);
+  updateStepInfo(20, userRepo);
+  updateStairInfo(20);
 }
 
 function updateUserInfo(userObj, avgStepGoal) {
@@ -56,7 +58,28 @@ function updateMinutesInfo(userID) {
   let minutes = new Minutes(activityData);
   let userInstances = minutes.data.filter(data => data.userID === userID);
   let date = userInstances[userInstances.length - 1].date;
-  $('#user-minutes-today').html(`WOW! You were active for ${minutes.returnActiveMinutes(userID, date)} minutes today! The average of all our users was ${minutes.calculateOverallActivityAvg(date)} minutes active today.`)
+  $('#user-minutes-today').html(`WOW! You were active for ${minutes.returnActiveMinutes(userID, date)} minutes today! The average of all our users was ${minutes.calculateOverallActivityAvg(date)} minutes active today.`);
+  let weeklyMinutes = minutes.returnWeeklyActivity(userID, date);
+  $('#user-minutes-week').html(`Previous Weeks' Minutes: ${weeklyMinutes[0]} minutes, ${weeklyMinutes[1]} minutes, ${weeklyMinutes[2]} minutes, ${weeklyMinutes[3]} minutes, ${weeklyMinutes[4]} minutes, ${weeklyMinutes[5]} minutes, and  ${weeklyMinutes[6]} minutes active today!`)
+}
+
+function updateStepInfo(userID, userRepo) {
+  let steps = new Steps(activityData);
+  let userInstances = steps.data.filter(data => data.userID === userID);
+  let date = userInstances[userInstances.length -1].date;
+  $('#user-steps-today').html(`You went ${userInstances[userInstances.length - 1].numSteps} steps today, which translates to ${steps.calculateMilesWalked(userID, date, userRepo.returnUserData(userID).strideLength)} miles!`);
+  $('#user-steps-compare').html(`The average user went ${steps.calculateOverallStepAvg(date)} steps today.`);
+  let weeklySteps = steps.returnWeeklyStepCount(userID, date);
+  $('#user-steps-weekly').html(`Previous Weeks' Steps: ${weeklySteps[0]} steps, ${weeklySteps[1]} steps, ${weeklySteps[2]} steps, ${weeklySteps[3]} steps, ${weeklySteps[4]} steps, ${weeklySteps[5]} steps, and ${weeklySteps[6]} steps today!`);
+}
+
+function updateStairInfo(userID) {
+  let climb = new Climb(activityData);
+  let userInstances = climb.data.filter(data => data.userID === userID);
+  let date = userInstances[userInstances.length -1].date;
+  $('#user-stairs-today').html(`You've climbed ${userInstances[userInstances.length -1].flightsOfStairs} flights of stairs today, while the average user has climbed ${climb.calculateOverallClimbAvg(date)} flights of stairs today. Neat.`);
+  let weeklyClimb = climb.returnWeeklyClimb(userID, date);
+  $('#user-stairs-week').html(`Previous Weeks' Climb: ${weeklyClimb[0]} flights of stairs, ${weeklyClimb[1]} flights of stairs, ${weeklyClimb[2]} flights of stairs, ${weeklyClimb[3]} flights of stairs, ${weeklyClimb[4]} flights of stairs, ${weeklyClimb[5]} flights of stairs, and ${weeklyClimb[6]} flights of stairs today!`);
 }
 
 function toggleNavMenu(event) {
