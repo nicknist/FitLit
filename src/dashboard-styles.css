@@ -146,8 +146,8 @@ input {
   margin: auto;
   margin-top: 65px;
   background-color: rgb(218, 226, 230);
-  width: 400px; 
-  
+  width: 400px;
+
 }
 
 .info-card-inner {
@@ -167,7 +167,7 @@ input {
 .info-card-front, .info-card-back {
   background-color: rgb(218, 226, 230);
   background: rgb(218, 226, 230);
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
