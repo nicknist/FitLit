@@ -17,6 +17,16 @@ class Minutes {
     return Math.floor(weeklyActivity.reduce((acc, day) => acc += day, 0) / 7);
   }
 
+  returnWeeklyActivity(userID, date) {
+    let userInstances = this.data.filter(data => data.userID === userID);
+    let specificIndex = userInstances.findIndex(data => date === data.date);
+    let weeklyActivity = [];
+    for (let i = specificIndex; i > specificIndex - 7; i--) {
+      weeklyActivity.unshift(userInstances[i].minutesActive);
+    }
+    return weeklyActivity;    
+  }
+
   calculateOverallActivityAvg(date) {
     let userInstances = this.data.filter(data => data.date === date);
     return Math.floor(userInstances.reduce((acc, sum) => acc += sum.minutesActive, 0) / userInstances.length);
