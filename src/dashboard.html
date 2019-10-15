@@ -30,14 +30,13 @@
         </ul>
       </nav>
       <section class="main-dashboard">
-        <input type="checkbox"  />
         <article class="info-card">
           <div class="info-card-inner">
             <div class="info-card-front">
               <img class="dashboard-photo" src="../images/water-droplet.png" alt="Teardrop to signify hydration information">
             </div>
             <div class="info-card-back">
-              <p class="user-info">USER HYDRATION INFO</p>
+              <p>USER HYDRATION INFO</p>
               <ul>
                 <li id="user-hydration-today">Stuff Here</li>
                 <li id="user-hydration-week">More Stuff Here</li>
@@ -46,32 +45,65 @@
           </div>
         </article>
         <article class="info-card">
-          <img class="dashboard-photo" src="../images/timer.png" alt="Clock to signify minutes active">
+          <div class="info-card-inner">
+            <div class="info-card-front">
+              <img class="dashboard-photo" src="../images/timer.png" alt="Timer to signify minutes active information">
+            </div>
+            <div class="info-card-back">
+              <p>USER MINUTES ACTIVE INFO</p>
+              <ul>
+                <li id="user-minutes-today">Stuff Here</li>
+                <li id="user-minutes-compare">More Stuff Here</li>
+              </ul>
+            </div>
+          </div>
         </article>
         <article class="info-card">
-          <img class="dashboard-photo" src="../images/sleep.png" alt="Picture of Z's to signify sleep information">
+          <div class="info-card-inner">
+            <div class="info-card-front">
+              <img class="dashboard-photo" src="../images/sleep.png" alt="Sleep Z's to signify sleep information">
+            </div>
+            <div class="info-card-back">
+              <p>USER SLEEP INFO</p>
+              <ul>
+                <li id="user-sleep-quality-today">Stuff Here</li>
+                <li id="user-sleep-quantity-today">More Stuff Here</li>
+                <li id="user-sleep-quality-week">Stuff Here</li>
+                <li id="user-sleep-quantity-week">More Stuff Here</li>
+                <li id="user-sleep-quality-average">Stuff Here</li>
+                <li id="user-sleep-quantity-average">More Stuff Here</li>
+              </ul>
+            </div>
+          </div>
         </article>
         <article class="info-card">
-          <img class="dashboard-photo" src="../images/stairs.png" alt="Stairs photo to signify flights of stairs climbed">
+          <div class="info-card-inner">
+            <div class="info-card-front">
+              <img class="dashboard-photo" src="../images/stairs.png" alt="Stairs photo to signify flights of stairs climbed">
+            </div>
+            <div class="info-card-back">
+              <p>USER HYDRATION INFO</p>
+              <ul>
+                <li id="user-hydration-today">Stuff Here</li>
+                <li id="user-hydration-week">More Stuff Here</li>
+              </ul>
+            </div>
+          </div>
         </article>
         <article class="info-card">
-          <img class="dashboard-photo" src="../images/shoe-icon.png" alt="Foot picture to signify step goal information">
+          <div class="info-card-inner">
+            <div class="info-card-front">
+              <img class="dashboard-photo" src="../images/shoe-icon.png" alt="Foot picture to signify step goal information">
+            </div>
+            <div class="info-card-back">
+              <p>USER HYDRATION INFO</p>
+              <ul>
+                <li id="user-hydration-today">Stuff Here</li>
+                <li id="user-hydration-week">More Stuff Here</li>
+              </ul>
+            </div>
+          </div>
         </article>
-        <!-- <article class="info-card">
-          <p class="user-info">USER HYDRATION INFO</p>
-        </article>
-        <article class="info-card">
-          <p class="user-info">USER MINUTES ACTIVE INFO</p>
-        </article>
-        <article class="info-card">
-          <p class="user-info">USER SLEEP INFO</p>
-        </article>
-        <article class="info-card">
-          <p class="user-info">USER CLIMB INFO</p>
-        </article>
-        <article class="info-card">
-          <p class="user-info">USER STEP INFO</p>
-        </article> -->
       </section>
     </main>
   </body>
@@ -79,6 +111,9 @@
   <script type="text/javascript" src="User.js"></script>
   <script type="text/javascript" src="UserRepository.js"></script>
   <script type="text/javascript" src="Hydration.js"></script>
+  <script type="text/javascript" src="SleepQuality.js"></script>
+  <script type="text/javascript" src="SleepQuantity.js"></script>
+  <script type="text/javascript" src="Minutes.js"></script>
   <script type="text/javascript" src="../data/users.js"></script>
   <script type="text/javascript" src="../data/hydration.js"></script>
   <script type="text/javascript" src="../data/sleep.js"></script>
