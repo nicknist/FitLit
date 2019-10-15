@@ -4,8 +4,8 @@ document.querySelector('#menu-btn').addEventListener('click', toggleNavMenu);
 function loadDashBoard() {
   let instantiatedUsers = userData.map((user) => new User(user));
   let userRepo = new UserRepository(instantiatedUsers);
-  updateUserInfo(userRepo.returnUserData(36), userRepo.calculateAvgStepGoal());
-  updateHydrationInfo();
+  updateUserInfo(userRepo.returnUserData(20), userRepo.calculateAvgStepGoal());
+  updateHydrationInfo(20);
 }
 
 function updateUserInfo(userObj, avgStepGoal) {
@@ -20,8 +20,13 @@ function updateUserInfo(userObj, avgStepGoal) {
   $('#user-compare-goal').html(`Your step goal is ${userObj.dailyStepGoal} and the average is ${avgStepGoal}`)
 }
 
-function updateHydrationInfo() {
-  
+function updateHydrationInfo(userID) {
+  let hydration = new Hydration(hydrationData);
+  let userInstances =  hydration.hydrationData.filter(data => data.userID === userID);
+  let date = userInstances[userInstances.length - 1].date;
+  $('#user-hydration-today').html(`You have drank ${hydration.returnConsumption(userID, date)} ounces today!`);
+  let weeklyHydration = hydration.returnWeekConsumption(userID, date);
+  $('#user-hydration-week').html(`Previous Weeks' Consumption: ${weeklyHydration[0]} ounces, ${weeklyHydration[1]} ounces, ${weeklyHydration[2]} ounces, ${weeklyHydration[3]} ounces, ${weeklyHydration[4]} ounces, ${weeklyHydration[5]} ounces, and  ${weeklyHydration[6]} ounces today!`)
 }
 
 function toggleNavMenu(event) {
