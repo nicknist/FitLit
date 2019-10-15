@@ -17,6 +17,16 @@ class Steps {
     }
   }
 
+  returnWeeklyStepCount(userID, date) {
+    let userInstances = this.data.filter(data => data.userID === userID);
+    let specificIndex = userInstances.findIndex(data => date === data.date);
+    let weeklySteps = [];
+    for (let i = specificIndex; i > specificIndex - 7; i--) {
+      weeklySteps.unshift(userInstances[i].numSteps);
+    }
+    return weeklySteps;
+  }
+
   returnDaysGoalReached(userID, stepGoal) {
     let userSteps = this.data.filter(data => data.userID === userID);
     let daysGoalReached = userSteps.filter(day => day.numSteps >= stepGoal);
