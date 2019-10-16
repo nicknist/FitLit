@@ -4,7 +4,7 @@ document.querySelector('#menu-btn').addEventListener('click', toggleNavMenu);
 function loadDashBoard() {
   let instantiatedUsers = userData.map((user) => new User(user));
   let userRepo = new UserRepository(instantiatedUsers);
-  updateUserInfo(userRepo.returnUserData(20), userRepo.calculateAvgStepGoal());
+  updateUserInfo(userRepo.returnUserData(20), userRepo.calculateAvgStepGoal(), userRepo);
   updateHydrationInfo(20);
   updateSleepQualityInfo(20);
   updateSleepQuantityInfo(20);
@@ -13,7 +13,7 @@ function loadDashBoard() {
   updateStairInfo(20);
 }
 
-function updateUserInfo(userObj, avgStepGoal) {
+function updateUserInfo(userObj, avgStepGoal, userRepo) {
   $('#welcome-message').text(userObj.name);
   $('#user-id').html(`User ID:<br><br> ${userObj.id}<br>`);
   $('#user-name').html(`Name:<br><br> ${userObj.name}<br>`);
@@ -21,8 +21,34 @@ function updateUserInfo(userObj, avgStepGoal) {
   $('#user-email').html(`Email:<br><br> ${userObj.email}<br>`);
   $('#user-stride').html(`Stride Length:<br><br> ${userObj.strideLength}<br>`);
   $('#user-step-goal').html(`Daily Step Goal:<br><br> ${userObj.dailyStepGoal}<br>`);
-  $('#user-friends').html(`Friends:<br><br> ${userObj.friends}<br>`);
+  $('#user-friends').html(`Friends:<br><br><ul id="friend-info"></ul>`);
+  getFriendInformation(userObj, userRepo);
   $('#user-compare-goal').html(`Your step goal is ${userObj.dailyStepGoal} and the average is ${avgStepGoal}`)
+}
+
+function getFriendInformation(userObj, userRepo) {
+  let userFriends = userObj.friends;
+  userFriends.push(userObj.id);
+  let steps = new Steps(activityData);
+  let userInstances = steps.data.filter(data => data.userID === userObj.id);
+  let date = userInstances[userInstances.length - 1].date;
+  let weekWinner = null;
+  userFriends.forEach(friend => {
+    if (weekWinner < getFriendStepInfo(friend, date, steps)) {
+      weekWinner = getFriendStepInfo(friend, date, steps);
+      weekWinnerMsg = `The winner for the week is ${getFriendName(userRepo, friend)} with ${getFriendStepInfo(friend, date, steps)} steps!`;
+    }
+    $('#friend-info').append(`<li>${getFriendName(userRepo, friend)} - ${getFriendStepInfo(friend, date, steps)}</li>`)
+  });
+  $('#friend-info').append(weekWinnerMsg);
+}
+
+function getFriendName(userRepo, friend) {
+  return userRepo.data.find(user => user.id === friend).name.split(' ')[0];
+}
+
+function getFriendStepInfo(friend, date, steps) {
+  return steps.returnWeeklyStepCount(friend, date).reduce((acc, sum) => acc += sum, 0);
 }
 
 function updateHydrationInfo(userID) {
