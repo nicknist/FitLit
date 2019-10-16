@@ -8,5 +8,5 @@ FitLit was designed to really dive into Test Driven Development. This project re
 
 ## Working Demo:
 
-
+[open-page.gif]
 
