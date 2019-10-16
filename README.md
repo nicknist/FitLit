@@ -1,6 +1,6 @@
 # FitLit
 
-# Project Overview:
+## Project Overview:
 
 FitLit is all about your Journey to Health. By using FitLit, you get up to the minute info about various aspects of your daily health, including water intake, steps taken, sleep information, and more! You can also compare your activity to your friends to compete for Healthy Bragging Rights!
 
