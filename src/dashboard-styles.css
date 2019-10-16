@@ -92,7 +92,7 @@ nav {
   z-index: 1000;
 }
 
-.hidden {
+.hidden2 {
   position: absolute;
   left: -500px;
   transition: .5s;
@@ -118,7 +118,8 @@ body {
   background-size: 200vh;
   background-attachment: fixed;
   height: 150vh;
-  
+    margin: 0;
+      font-family: 'Fugaz One', curisve;
 }
 
 .header-line1 {
@@ -214,4 +215,13 @@ main {
   transform: rotateY(180deg);
   transition: transform 1s;
   overflow: auto;
+}
+
+.hidden {
+  display: none;
+}
+.hidden2 {
+  position: absolute;
+  left: -500px;
+  transition: .5s;
 }
