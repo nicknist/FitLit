@@ -153,6 +153,10 @@ describe('Minutes', () => {
     expect(minutes2.calculateWeeklyActivityAvg(1, "2019/06/21")).to.equal(113)
   });
 
+  it('should be able to return weekly activity based on date and userID', () => {
+    expect(minutes2.returnWeeklyActivity(1, "2019/06/21")).to.deep.equal([140, 138, 116, 114, 110, 18, 156]);
+  });
+
   it('should calculate the overall average of minutes based on date', () => {
     expect(minutes.calculateOverallActivityAvg("2019/06/15")).to.equal(131);
   });

@@ -55,6 +55,6 @@ class SleepQuality {
 
 }
 
-if (module !== undefined) {
+if (typeof module !== 'undefined') {
   module.exports = SleepQuality;
 }

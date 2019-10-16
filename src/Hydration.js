@@ -26,6 +26,18 @@ class Hydration {
     }
     return weeklyConsumption;
   }
+
+  returnTopFiveHydrationDays(userID) {
+    let userInstances =  this.hydrationData.filter((data) => data.userID === userID);
+    userInstances.sort((a, b) => b.numOunces - a.numOunces);
+    let top5 = '';
+    userInstances.forEach((instance, i) => {
+      if (i < 5) {
+        top5 += `<li>${i+1}: ${instance.date} with ${instance.numOunces} ounces</li>`;
+      }
+    });
+    return top5;
+  }
 }
 
 if (typeof module !== 'undefined') {

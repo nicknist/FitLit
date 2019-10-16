@@ -132,4 +132,8 @@ describe('Hydration', () => {
     it('should be able to return a week of consumption', () => {
       expect(hydrationWeeklyData.returnWeekConsumption(1, '2019/06/22')).to.deep.equal([29, 20, 40, 90, 10, 25, 37]);
     });
+
+    it('should be able to give the top five hydration days', () => {
+      expect(hydrationWeeklyData.returnTopFiveHydrationDays(1)).to.equal("<li>1: 2019/06/19 with 90 ounces</li><li>2: 2019/06/18 with 40 ounces</li><li>3: 2019/06/22 with 37 ounces</li><li>4: 2019/06/16 with 29 ounces</li><li>5: 2019/06/15 with 28 ounces</li>");
+    })
 })

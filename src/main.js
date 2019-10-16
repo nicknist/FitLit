@@ -57,7 +57,8 @@ function updateHydrationInfo(userID) {
   let date = userInstances[userInstances.length - 1].date;
   $('#user-hydration-today').html(`You have drank ${hydration.returnConsumption(userID, date)} ounces today!`);
   let weeklyHydration = hydration.returnWeekConsumption(userID, date);
-  $('#user-hydration-week').html(`Previous Weeks' Consumption: ${weeklyHydration[0]} ounces, ${weeklyHydration[1]} ounces, ${weeklyHydration[2]} ounces, ${weeklyHydration[3]} ounces, ${weeklyHydration[4]} ounces, ${weeklyHydration[5]} ounces, and  ${weeklyHydration[6]} ounces today!`)
+  $('#user-hydration-week').html(`Previous Weeks' Consumption: ${weeklyHydration[0]} ounces, ${weeklyHydration[1]} ounces, ${weeklyHydration[2]} ounces, ${weeklyHydration[3]} ounces, ${weeklyHydration[4]} ounces, ${weeklyHydration[5]} ounces, and  ${weeklyHydration[6]} ounces today!`);
+  $('#user-hydration-week').append(`<ul>Your Top 5 Days for Hydration: ${hydration.returnTopFiveHydrationDays(userID)}</ul>`);
 }
 
 function updateSleepQualityInfo(userID) {
@@ -97,6 +98,19 @@ function updateStepInfo(userID, userRepo) {
   $('#user-steps-compare').html(`The average user went ${steps.calculateOverallStepAvg(date)} steps today.`);
   let weeklySteps = steps.returnWeeklyStepCount(userID, date);
   $('#user-steps-weekly').html(`Previous Weeks' Steps: ${weeklySteps[0]} steps, ${weeklySteps[1]} steps, ${weeklySteps[2]} steps, ${weeklySteps[3]} steps, ${weeklySteps[4]} steps, ${weeklySteps[5]} steps, and ${weeklySteps[6]} steps today!`);
+  updateStepIncreaseInfo(userID, steps, date, userInstances);
+}
+
+function updateStepIncreaseInfo(userID, steps, date, userInstances) {
+  let positiveDays = userInstances.filter((instance, i) => {
+    if (i > 1 && instance.numSteps > userInstances[i-1].numSteps && userInstances[i-1].numSteps > userInstances[i-2].numSteps) {
+      return true;
+    };
+  })
+  $('#user-steps-weekly').append(`<br> Here are the days where you went up in steps the previous two days:<br><ul id="step-increase"></ul>`);
+  positiveDays.forEach((day) => {
+    $('#step-increase').append(`<li>${day.date}</li>`);
+  })
 }
 
 function updateStairInfo(userID) {
@@ -125,5 +139,3 @@ $('.info-card').click(flipCard);
 function flipCard() {
   $(this).toggleClass('flip');
 }
-
-

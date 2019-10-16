@@ -39,6 +39,6 @@ class SleepQuantity {
   }
 }
 
-if (module !== undefined) {
+if (typeof module !== 'undefined') {
   module.exports = SleepQuantity;
 }
