@@ -7,6 +7,9 @@ FitLit is all about your Journey to Health. By using FitLit, you get up to the m
 FitLit was designed to really dive into Test Driven Development. This project required setting up several Classes, each requiring multiple methods. Each Class JavaScript file was accompanied with a test JavaScript file. This project also focused on object oriented programing, making multiple Classes "talk" to one another, and using the Class methods to manipulate the DOM and make the entire app dynamic. 
 
 ## Working Demo:
-
+### Front Page:
 ![open-page.gif](https://github.com/Dustin-Mikusko/FitLit/blob/master/images/open-page.gif)
+
+### Card Flips:
+![card-flip.gif](https://github.com/Dustin-Mikusko/FitLit/blob/master/images/card-flip.gif)
 
