@@ -1,16 +1,30 @@
-window.addEventListener('load', loadDashBoard);
-document.querySelector('#menu-btn').addEventListener('click', toggleNavMenu);
+// window.addEventListener('load', loadDashBoard);
+// document.querySelector('#menu-btn').addEventListener('click', toggleNavMenu);
+
+
+let userInput;
+
+$('#front-page-btn').click(getUserInput);
+
+function getUserInput() {
+  userInput= parseInt($('#front-page-name').val());
+  $('#front-page').addClass('hidden');
+  $('#dashboard').removeClass('hidden');
+  loadDashBoard();
+  document.querySelector('#menu-btn').addEventListener('click', toggleNavMenu);
+
+}
 
 function loadDashBoard() {
   let instantiatedUsers = userData.map((user) => new User(user));
   let userRepo = new UserRepository(instantiatedUsers);
-  updateUserInfo(userRepo.returnUserData(20), userRepo.calculateAvgStepGoal(), userRepo);
-  updateHydrationInfo(20);
-  updateSleepQualityInfo(20);
-  updateSleepQuantityInfo(20);
-  updateMinutesInfo(20);
-  updateStepInfo(20, userRepo);
-  updateStairInfo(20);
+  updateUserInfo(userRepo.returnUserData(userInput), userRepo.calculateAvgStepGoal(), userRepo);
+  updateHydrationInfo(userInput);
+  updateSleepQualityInfo(userInput);
+  updateSleepQuantityInfo(userInput);
+  updateMinutesInfo(userInput);
+  updateStepInfo(userInput, userRepo);
+  updateStairInfo(userInput);
 }
 
 function updateUserInfo(userObj, avgStepGoal, userRepo) {
@@ -123,12 +137,12 @@ function updateStairInfo(userID) {
 }
 
 function toggleNavMenu(event) {
-  if (document.querySelector('nav').classList.contains('hidden')) {
-    document.querySelector('nav').classList.remove('hidden');
+  if (document.querySelector('nav').classList.contains('hidden2')) {
+    document.querySelector('nav').classList.remove('hidden2');
     $('.menu-div1').css('margin-right', '40px');
     $('.menu-div3').css('margin-right', '0px');
   } else {
-    document.querySelector('nav').classList.add('hidden');
+    document.querySelector('nav').classList.add('hidden2');
     $('.menu-div1').css('margin-right', '0px');
     $('.menu-div3').css('margin-right', '40px');
   }
