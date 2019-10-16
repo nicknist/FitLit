@@ -93,3 +93,11 @@ function toggleNavMenu(event) {
     $('.menu-div3').css('margin-right', '40px');
   }
 }
+
+$('.info-card').click(flipCard);
+
+function flipCard() {
+  $(this).toggleClass('flip');
+}
+
+
