@@ -5,26 +5,125 @@
     <title>Activity Tracker</title>
     <link rel = "stylesheet"
    type = "text/css"
+   href = "dashboard-styles.css" />
+    <link rel = "stylesheet"
+   type = "text/css"
    href = "front-page.css" />
    <link href="https://fonts.googleapis.com/css?family=Fugaz+One|Roboto+Condensed:300&display=swap" rel="stylesheet">
-
   </head>
+
   <body>
+    <section id="front-page">
     <header id="front-page-header">
-      <h1>FitLit</h1>
+      <h1 id="front-logo">FitLit</h1>
     </header>
     <form id="front-page-form">
       <input id="front-page-name" type="text" placeholder="Enter User ID..."><br>
       <button id="front-page-btn" type="button">Enter</button>
     </form>
     <footer id="front-page-footer">
-      <h2>Your Journey to Health</h2>
+      <h2 id="front-slogan">Your Journey to Health</h2>
     </footer>
+  </section>
 
-    <script type="text/javascript" src="../data/users.js"></script>
-    <script type="text/javascript" src="../data/hydration.js"></script>
-    <script type="text/javascript" src="../data/sleep.js"></script>
-    <script type="text/javascript" src="../data/activity.js"></script>
-    <script type="text/javascript" src="./main.js"></script>
+  <section id="dashboard" class="hidden">
+    <header>
+      <button id="menu-btn">
+          <div class="menu-div1"></div>
+          <div class="menu-div2"></div>
+          <div class="menu-div3"></div>
+      </button>
+      <h1>Hi, <span id="welcome-message">USER</span>!</h1>
+      <h2>FitLit</h2>
+    </header>
+    <div class="header-line1"></div>
+      <div class="header-line2"></div>
+    <main>
+      <nav class="hidden2">
+        <ul>
+          <li id="user-id">UserID: ?</li>
+          <li id="user-name">Name: ?</li>
+          <li id="user-address">Address: ?</li>
+          <li id="user-email">Email: ?</li>
+          <li id="user-stride">Stride Length: ?</li>
+          <li id="user-step-goal">Daily Step Goal: ?</li>
+          <li id="user-friends">Friends: Form goes below this li</li>
+          <li id="user-compare-goal">STEP GOAL COMPARISON</li>
+        </ul>
+      </nav>
+      <section class="main-dashboard">
+        <article class="info-card">
+              <img class="dashboard-photo info-card-back" src="../images/water-droplet.png" alt="Teardrop to signify hydration information">
+            <div class="info-card-front">
+              <p>USER HYDRATION INFO</p>
+              <ul>
+                <li id="user-hydration-today">Stuff Here</li>
+                <li id="user-hydration-week">More Stuff Here</li>
+              </ul>
+            </div>
+        </article>
+        <article class="info-card">
+              <img class="dashboard-photo info-card-back" src="../images/timer.png" alt="Timer to signify minutes active information">
+            <div class="info-card-front">
+              <p>USER MINUTES ACTIVE INFO</p>
+              <ul>
+                <li id="user-minutes-today">Stuff Here</li>
+                <li id="user-minutes-week">More Stuff Here</li>
+              </ul>
+            </div>
+        </article>
+        <article class="info-card">
+              <img class="dashboard-photo info-card-back" src="../images/sleep.png" alt="Sleep Z's to signify sleep information">
+            <div class="info-card-front">
+              <p>USER SLEEP INFO</p>
+              <ul>
+                <li id="user-sleep-quality-today">Stuff Here</li>
+                <li id="user-sleep-quantity-today">More Stuff Here</li>
+                <li id="user-sleep-quality-week">Stuff Here</li>
+                <li id="user-sleep-quantity-week">More Stuff Here</li>
+                <li id="user-sleep-quality-average">Stuff Here</li>
+                <li id="user-sleep-quantity-average">More Stuff Here</li>
+              </ul>
+            </div>
+        </article>
+        <article class="info-card">
+              <img class="dashboard-photo info-card-back" src="../images/stairs.png" alt="Stairs photo to signify flights of stairs climbed">
+            <div class="info-card-front">
+              <p>USER CLIMB INFO</p>
+              <ul>
+                <li id="user-stairs-today">Stuff Here</li>
+                <li id="user-stairs-week">More Stuff Here</li>
+              </ul>
+            </div>
+        </article>
+        <article class="info-card">
+              <img class="dashboard-photo info-card-back" src="../images/shoe-icon.png" alt="Foot picture to signify step goal information">
+            </div>
+            <div class="info-card-front">
+              <p>USER STEP INFO</p>
+              <ul>
+                <li id="user-steps-today">Stuff Here</li>
+                <li id="user-steps-compare">Stuff Here</li>
+                <li id="user-steps-weekly">More Stuff Here</li>
+              </ul>
+            </div>
+        </article>
+      </section>
+    </main>
+    </section>
   </body>
+  <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="User.js"></script>
+  <script type="text/javascript" src="UserRepository.js"></script>
+  <script type="text/javascript" src="Hydration.js"></script>
+  <script type="text/javascript" src="SleepQuality.js"></script>
+  <script type="text/javascript" src="SleepQuantity.js"></script>
+  <script type="text/javascript" src="Minutes.js"></script>
+  <script type="text/javascript" src="Steps.js"></script>
+  <script type="text/javascript" src="Climb.js"></script>
+  <script type="text/javascript" src="../data/users.js"></script>
+  <script type="text/javascript" src="../data/hydration.js"></script>
+  <script type="text/javascript" src="../data/sleep.js"></script>
+  <script type="text/javascript" src="../data/activity.js"></script>
+  <script type="text/javascript" src="main.js"></script>
 </html>
