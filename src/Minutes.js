@@ -24,7 +24,7 @@ class Minutes {
     for (let i = specificIndex; i > specificIndex - 7; i--) {
       weeklyActivity.unshift(userInstances[i].minutesActive);
     }
-    return weeklyActivity;    
+    return weeklyActivity;
   }
 
   calculateOverallActivityAvg(date) {
@@ -39,6 +39,6 @@ class Minutes {
   }
 }
 
-if (module !== undefined) {
+if (typeof module !== 'undefined') {
   module.exports = Minutes;
 }

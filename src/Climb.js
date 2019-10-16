@@ -31,6 +31,6 @@ class Climb {
   }
 }
 
-if (module !== undefined) {
+if (typeof module !== 'undefined') {
   module.exports = Climb;
 }

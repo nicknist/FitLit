@@ -196,6 +196,10 @@ describe('Steps', () => {
     expect(steps.checkStepGoal(3, "2019/06/17", userRepo.returnUserData(3).dailyStepGoal)).to.equal(false);
   });
 
+  it('should be able to return an array of weekly steps based on a date', () => {
+    expect(steps2.returnWeeklyStepCount(1, "2019/06/21")).to.deep.equal([3577, 4294, 7402, 3486, 3277, 5702, 7432]);
+  })
+
   it('should be able to check days that step goal was reached for a user', () => {
     expect(steps.returnDaysGoalReached(1, userRepo.returnUserData(1).dailyStepGoal)).to.deep.equal(['2019/06/17']);
   });
