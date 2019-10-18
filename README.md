@@ -13,3 +13,6 @@ FitLit was designed to really dive into Test Driven Development. This project re
 ### Card Flips:
 ![card-flip.gif](https://github.com/Dustin-Mikusko/FitLit/blob/master/images/card-flip.gif)
 
+### Collaborators:
+
+[Nick Nist](https://github.com/nicknist) | [Dustin Mikusko]()
