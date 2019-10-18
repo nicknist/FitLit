@@ -15,4 +15,4 @@ FitLit was designed to really dive into Test Driven Development. This project re
 
 ### Collaborators:
 
-[Nick Nist](https://github.com/nicknist) | [Dustin Mikusko]()
+[Nick Nist](https://github.com/nicknist) | [Dustin Mikusko](https://github.com/Dustin-Mikusko)
